@@ -8,7 +8,7 @@ const Profile = () => {
   return (
     <section
       id="profile"
-      className="pt-10 h-screen flex flex-col justify-center md:w-1/3"
+      className="h-screen flex flex-col justify-center items-center md:w-1/3"
     >
       <div className="profile-container flex flex-col items-center md:items-end">
         <img
@@ -17,12 +17,12 @@ const Profile = () => {
           alt="Portrait"
         />
       </div>
-      <div className="text-center md:hidden">
+      <div className="text-center">
         <div className="py-4">
           <h1 className="text-xl font-bold">BONGKAN JUJAI</h1>
           <p className="locat">Lamphun, Thailand</p>
         </div>
-        <div className="text-center">
+        <div className="text-center md:hidden">
           <h4>
             <a href="mailto:Bongkan.jj@gmail.com">Bongkan.jj@gmail.com</a>
           </h4>
@@ -40,10 +40,10 @@ const Profile = () => {
               <img className="soc" src={Git} alt="Github" />
             </a>
           </div>
-          <h4 className="">
-            <i>" Former engineer into a new journey "</i>
-          </h4>
         </div>
+        <h4>
+          <i>" Former engineer into a new journey "</i>
+        </h4>
       </div>
     </section>
   );

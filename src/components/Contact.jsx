@@ -5,16 +5,20 @@ import Linked from "../assets/icons8-linked-in.svg";
 
 const Contact = () => {
   return (
-    <div className="flex flex-col text-2xl h-full justify-center shadow-[0px_5px_69px_0px_rgb(2,110,2)] rounded-full">
-      <h4 className="text-center">
-        <i>" Former engineer into a new journey "</i>
-      </h4>
-      <div className="text-center">
-        <div className="py-10">
-          <h1 className="text-4xl font-bold">BONGKAN JUJAI</h1>
-          <p className="locat">Lamphun, Thailand</p>
+    <div className="flex flex-col text-2xl h-full justify-center items-center ">
+      <div>
+        <div className="pb-10 max-w-[700px]">
+          <p className="pb-4 text-start">Hi there!</p>
+          <p className="pb-4">
+            I'm a tech learner with a background in mechanical engineering.
+          </p>
+          <p className="pb-4">
+            My passion for innovation and problem-solving has led me to explore
+            the dynamic world of technology.
+          </p>
+          <p>I am excited to be a part of this ever-growing industry!</p>
         </div>
-        <div className="text-center">
+        <div className="hidden md:block text-center">
           <h4>
             <a href="mailto:Bongkan.jj@gmail.com">Bongkan.jj@gmail.com</a>
           </h4>

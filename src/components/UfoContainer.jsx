@@ -3,7 +3,7 @@ import Ufo from "../assets/ufo-flying-svgrepo-com.svg";
 
 const UfoContainer = () => {
   return (
-    <div className="mt-3 p-0 text-center">
+    <div className="mt-3 p-0 flex justify-center">
       <img
         id="ufo-logo"
         src={Ufo}
