@@ -8,11 +8,11 @@ const Profile = () => {
   return (
     <section
       id="profile"
-      className="h-screen flex flex-col justify-center items-center md:w-1/3"
+      className="pl-[20vw] md:p-10 h-screen flex flex-col justify-center items-center md:w-1/3"
     >
       <div className="profile-container flex flex-col items-center md:items-end">
         <img
-          className="w-[200px] mt-0 pt-0 rounded-[30px] shadow-[5px_5px_5px_rgb(2,110,2)] md:w-[400px]"
+          className="w-[200px] mt-0 pt-0 rounded-[30px] shadow-[5px_5px_5px_rgb(2,110,2)] md:w-[600px]"
           src={ProfilePic}
           alt="Portrait"
         />
