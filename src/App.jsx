@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import React, { useState, useEffect } from "react";
+// import Nav from "./components/nav";
+import Profile from "./components/profileCard";
+import DataSection from "./components/data";
+import backgroundImage from "./assets/panoramic-view-sunset-night.jpg";
+import Nav2 from "./components/Nav2";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [activeSection, setActiveSection] = useState("");
+  const [profileDesktop, setProfileDesktop] = useState("");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setProfileDesktop("False");
+        setActiveSection("Home");
+      } else {
+        setProfileDesktop("True");
+        setActiveSection("About");
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+      className="bg-cover bg-center text-white flex"
+    >
+      <Nav2 activeSection={activeSection} setActiveSection={setActiveSection} />
+      <main className="flex flex-col md:flex-row w-full">
+        {profileDesktop === "True" && <Profile />}
+        <DataSection
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
+        />
+      </main>
+    </div>
+  );
+};
 
-export default App
+export default App;
