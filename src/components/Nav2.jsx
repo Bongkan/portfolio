@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import UfoContainer from "./UfoContainer";
 
-const Nav = ({ activeSection, setActiveSection }) => {
+const Nav2 = ({ activeSection, setActiveSection }) => {
   const sections = [
     "Home",
     "About",
@@ -10,13 +10,18 @@ const Nav = ({ activeSection, setActiveSection }) => {
     "Skills",
     "Education",
   ];
+  const [showMenu, setShowMenu] = useState("Off");
 
   const handleClick = (section) => {
     setActiveSection(section);
   };
 
-  return (
-    <nav className="fixed top-0 left-0 z-[100] ml-[10px] flex flex-col h-screen md:hidden">
+  const ToggleUFO = () => {
+    setShowMenu((prevShowMenu) => (prevShowMenu === "Off" ? "On" : "Off"));
+  };
+
+  const renderNav = () => {
+    return (
       <ul className="h-full mt-2 flex flex-col justify-evenly md:hidden">
         {sections.map((section) => (
           <li
@@ -26,15 +31,29 @@ const Nav = ({ activeSection, setActiveSection }) => {
                 ? "flex items-center justify-center hover:opacity-50 hover:shadow-[5px_5px_5px_rgb(2,110,2)] rounded-full duration-[750ms]"
                 : "shadow-[5px_0px_5px_rgb(2,110,2)] bg-white bg-opacity-10 rounded-full"
             }`}
-            onClick={() => handleClick(section)}
+            onClick={() => {
+              handleClick(section);
+              setShowMenu("Off");
+            }}
           >
             {activeSection === section && <UfoContainer />}
             <a>{section}</a>
           </li>
         ))}
       </ul>
+    );
+  };
+
+  return (
+    <nav
+      className={`ml-[10px] flex flex-col h-screen md:hidden ${
+        showMenu !== "On" ? "fixed top-0 left-0 z-[100]" : ""
+      }`}
+    >
+      <a onClick={ToggleUFO}>{showMenu === "Off" && <UfoContainer />}</a>
+      {showMenu === "On" && renderNav()}
     </nav>
   );
 };
 
-export default Nav;
+export default Nav2;

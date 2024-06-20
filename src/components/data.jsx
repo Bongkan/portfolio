@@ -5,13 +5,14 @@ import Experience from "./experience";
 import Education from "./education";
 import Skill from "./skill";
 import Project from "./project";
+import Profile from "./profileCard";
 
 const DataSection = ({ activeSection, setActiveSection }) => {
   const sections = ["About", "Projects", "Experience", "Skills", "Education"];
 
   return (
-    <section id="data" className="w-full md:w-2/3 flex md:flex-col h-screen">
-      <div className="flex flex-col md:flex-row justify-evenly">
+    <section id="data" className="w-full md:w-2/3 flex md:flex-col h-screen ">
+      <div className="hidden md:flex flex-col md:flex-row justify-evenly">
         {sections.map((section) => (
           <div
             key={section}
@@ -27,8 +28,8 @@ const DataSection = ({ activeSection, setActiveSection }) => {
           </div>
         ))}
       </div>
-      <div className="h-full pb-[10vh] w-full flex justify-center items-center pl-[10vw] md:pl-0">
-        {activeSection === "Home" && <Contact />}
+      <div className="h-full pb-[10vh] w-full flex justify-center items-center pl-[5vw] md:pl-0">
+        {activeSection === "Home" && <Profile />}
         {activeSection === "About" && <Contact />}
         {activeSection === "Experience" && <Experience />}
         {activeSection === "Education" && <Education />}
