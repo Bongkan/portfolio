@@ -28,7 +28,7 @@ const DataSection = ({ activeSection, setActiveSection }) => {
           </div>
         ))}
       </div>
-      <div className="h-full pb-[10vh] w-full flex justify-center items-center pl-[5vw] md:pl-0">
+      <div className="h-full pb-[10vh] w-full flex pl-[5vw] md:pl-0">
         {activeSection === "Home" && <Profile />}
         {activeSection === "About" && <Contact />}
         {activeSection === "Experience" && <Experience />}
