@@ -1,3 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes fadeInFromCenter {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromCenter {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animation-loading {
+  animation: fadeInFromCenter 1.5s ease-out forwards;
+}
