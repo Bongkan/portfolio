@@ -13,7 +13,6 @@ const DataSection = ({
   showCompany,
   setShowCompany,
   showProject,
-  setShowProject,
 }) => {
   const sections = ["About", "Projects", "Experience", "Skills", "Contact"];
 

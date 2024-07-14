@@ -16,7 +16,10 @@ const About = () => {
         </div>
       </div>
       <div className="hover:opacity-90 hover:bg-white hover:rounded hover:border-2 duration-100 hover:text-black">
-        <a href="https://www.facebook.com/Nanosweet159" target="_blank">
+        <a
+          href="https://drive.google.com/file/d/1ZE6iCBqo6xYdCI1-GqfkcbdWUYb0KWeL/view?usp=sharing"
+          target="_blank"
+        >
           Download My resume?
         </a>
       </div>

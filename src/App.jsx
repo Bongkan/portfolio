@@ -13,7 +13,7 @@ const App = () => {
   const [activeSection, setActiveSection] = useState("");
   const [profileDesktop, setProfileDesktop] = useState("");
   const [showCompany, setShowCompany] = useState("");
-  const [showProject, setShowProject] = useState("");
+  const [showProject, setShowProject] = useState("Pony Mart");
 
   useEffect(() => {
     const handleResize = () => {
