@@ -7,7 +7,7 @@ const ExperienceDetails = ({ showCompany }) => {
       {showCompany === "" && (
         <>
           {/* <img src={journey} alt="myjourney" width="50%" /> */}
-          <p>My journey just began!</p>
+          <p className="text-3xl">My journey has just begun!</p>
         </>
       )}
       {showCompany === "Generation" && (
@@ -28,26 +28,11 @@ const ExperienceDetails = ({ showCompany }) => {
         </div>
       )}
       {showCompany === "SVI" && (
-        <div>
-          <div className="flex justify-between">
-            <p>Graduate Engineer – Program Management</p>
-            <p>Oct 2021 – Aug 2022</p>
-          </div>
-          <p>SVI Public Company Limited</p>
-          <ul>
-            <li>
-              • Design process improvement projects while collaborating with
-              cross-functional teams
-            </li>
-            <li>
-              • Coordinate with teams to meet the customer requirements in terms
-              of production and materials management
-            </li>
-            <li>
-              • Developed and maintained good relationships with customers to
-              identify and remove roadblocks in each project
-            </li>
-          </ul>
+        <div className="flex flex-col">
+          <p className="pb-5 text-center">Oct 2021 – Aug 2022</p>
+          <p>Engineering</p>
+          <p>Project Management</p>
+          <p>Project Improvment</p>
         </div>
       )}
     </div>
