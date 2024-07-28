@@ -1,9 +1,9 @@
 import React from "react";
 const About = () => {
   return (
-    <div className="flex flex-col text-2xl h-full justify-center items-center w-full animation-fade-in">
+    <div className="flex flex-col text-sm md:text-2xl h-full justify-center items-center w-full animation-fade-in">
       <div>
-        <div className="pb-10 max-w-full px-28">
+        <div className="max-w-full px-10 py-10 md:pt-0 md:px-28">
           <p className="pb-4 text-start">Hi there!</p>
           <p className="pb-4">
             I'm a tech learner with a background in mechanical engineering.
