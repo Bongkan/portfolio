@@ -36,7 +36,7 @@ const DataSection = ({
   }, [activeSection]);
 
   return (
-    <section id="data" className="w-2/3 flex md:flex-col h-screen ">
+    <section id="data" className="md:w-2/3 flex md:flex-col h-screen ">
       <div className="hidden md:flex flex-col md:flex-row justify-around font-space md:h-1/6">
         {sections.map((section) => (
           <div

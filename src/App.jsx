@@ -14,6 +14,7 @@ const App = () => {
   const [profileDesktop, setProfileDesktop] = useState("");
   const [showCompany, setShowCompany] = useState("");
   const [showProject, setShowProject] = useState("Pony Mart");
+  const [showMenu, setShowMenu] = useState("Off");
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,38 +42,42 @@ const App = () => {
         <Nav2
           activeSection={activeSection}
           setActiveSection={setActiveSection}
+          showMenu={showMenu}
+          setShowMenu={setShowMenu}
         />
-        <main className="flex flex-col md:flex-row w-screen">
-          {profileDesktop === "True" && activeSection === "About" && (
-            <Profile />
-          )}
-          {profileDesktop === "True" && activeSection === "Skills" && (
-            <SkillCartoon />
-          )}
-          {profileDesktop === "True" && activeSection === "Projects" && (
-            <ProjectSample
+        {showMenu === "Off" && (
+          <main className="flex flex-col md:flex-row w-screen">
+            {profileDesktop === "True" && activeSection === "About" && (
+              <Profile />
+            )}
+            {profileDesktop === "True" && activeSection === "Skills" && (
+              <SkillCartoon />
+            )}
+            {profileDesktop === "True" && activeSection === "Projects" && (
+              <ProjectSample
+                showProject={showProject}
+                setShowProject={setShowProject}
+              />
+            )}
+            {profileDesktop === "True" && activeSection === "Contact" && (
+              <Profile />
+            )}
+            {profileDesktop === "True" && activeSection === "Experience" && (
+              <ExperienceDetails
+                showCompany={showCompany}
+                setShowCompany={setShowCompany}
+              />
+            )}
+            <DataSection
+              activeSection={activeSection}
+              setActiveSection={setActiveSection}
+              showCompany={showCompany}
+              setShowCompany={setShowCompany}
               showProject={showProject}
               setShowProject={setShowProject}
             />
-          )}
-          {profileDesktop === "True" && activeSection === "Contact" && (
-            <Profile />
-          )}
-          {profileDesktop === "True" && activeSection === "Experience" && (
-            <ExperienceDetails
-              showCompany={showCompany}
-              setShowCompany={setShowCompany}
-            />
-          )}
-          <DataSection
-            activeSection={activeSection}
-            setActiveSection={setActiveSection}
-            showCompany={showCompany}
-            setShowCompany={setShowCompany}
-            showProject={showProject}
-            setShowProject={setShowProject}
-          />
-        </main>
+          </main>
+        )}
       </div>
     </div>
   );

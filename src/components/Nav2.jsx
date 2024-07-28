@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import UfoContainer from "./UfoContainer";
 
-const Nav2 = ({ activeSection, setActiveSection }) => {
-  const sections = [
-    "Home",
-    "About",
-    "Projects",
-    "Experience",
-    "Skills",
-    "Education",
-  ];
-  const [showMenu, setShowMenu] = useState("Off");
+const Nav2 = ({ activeSection, setActiveSection, showMenu, setShowMenu }) => {
+  const sections = ["Home", "Projects", "Experience", "Skills"];
 
   const handleClick = (section) => {
     setActiveSection(section);
