@@ -7,7 +7,7 @@ const Experience = ({ showCompany, setShowCompany }) => {
   return (
     <div className="md:py-10 md:pr-10 md:pb-0 md:pt-5 w-full flex flex-col justify-center relative animation-fade-in">
       <button
-        className={`absolute top-10 left-10 hidden md:flex ${
+        className={`absolute top-10 left-10 hidden md:${
           showCompany === "" ? "hidden" : "flex"
         }`}
         onClick={() => setShowCompany("")}
