@@ -8,6 +8,7 @@ import Nav2 from "./components/Nav2";
 import ExperienceDetails from "./components/experience/experienceDetails.jsx";
 import SkillCartoon from "./components/skills/skillCartoon.jsx";
 import ProjectSample from "./components/projects/projectSample.jsx";
+import BackgroundStarGenerator from "./components/BackgroundStarGenerator.jsx";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("");
@@ -34,50 +35,50 @@ const App = () => {
   }, []);
 
   return (
-    <div
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-      className="bg-cover bg-center text-white flex font-spacemono"
-    >
-      <div className="animation-loading w-full">
-        <Nav2
-          activeSection={activeSection}
-          setActiveSection={setActiveSection}
-          showMenu={showMenu}
-          setShowMenu={setShowMenu}
-        />
-        {showMenu === "Off" && (
-          <main className="flex flex-col md:flex-row w-screen">
-            {profileDesktop === "True" && activeSection === "About" && (
-              <Profile />
-            )}
-            {profileDesktop === "True" && activeSection === "Skills" && (
-              <SkillCartoon />
-            )}
-            {profileDesktop === "True" && activeSection === "Projects" && (
-              <ProjectSample
+    <div className="background-container text-white">
+      <BackgroundStarGenerator />
+      <div className="content absolute z-10">
+        <div className="animation-loading w-full">
+          <Nav2
+            activeSection={activeSection}
+            setActiveSection={setActiveSection}
+            showMenu={showMenu}
+            setShowMenu={setShowMenu}
+          />
+          {showMenu === "Off" && (
+            <main className="flex flex-col md:flex-row w-screen">
+              {profileDesktop === "True" && activeSection === "About" && (
+                <Profile />
+              )}
+              {profileDesktop === "True" && activeSection === "Skills" && (
+                <SkillCartoon />
+              )}
+              {profileDesktop === "True" && activeSection === "Projects" && (
+                <ProjectSample
+                  showProject={showProject}
+                  setShowProject={setShowProject}
+                />
+              )}
+              {profileDesktop === "True" && activeSection === "Contact" && (
+                <Profile />
+              )}
+              {profileDesktop === "True" && activeSection === "Experience" && (
+                <ExperienceDetails
+                  showCompany={showCompany}
+                  setShowCompany={setShowCompany}
+                />
+              )}
+              <DataSection
+                activeSection={activeSection}
+                setActiveSection={setActiveSection}
+                showCompany={showCompany}
+                setShowCompany={setShowCompany}
                 showProject={showProject}
                 setShowProject={setShowProject}
               />
-            )}
-            {profileDesktop === "True" && activeSection === "Contact" && (
-              <Profile />
-            )}
-            {profileDesktop === "True" && activeSection === "Experience" && (
-              <ExperienceDetails
-                showCompany={showCompany}
-                setShowCompany={setShowCompany}
-              />
-            )}
-            <DataSection
-              activeSection={activeSection}
-              setActiveSection={setActiveSection}
-              showCompany={showCompany}
-              setShowCompany={setShowCompany}
-              showProject={showProject}
-              setShowProject={setShowProject}
-            />
-          </main>
-        )}
+            </main>
+          )}
+        </div>
       </div>
     </div>
   );
