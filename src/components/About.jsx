@@ -1,7 +1,7 @@
 import React from "react";
 const About = () => {
   return (
-    <div className="flex flex-col text-2xl h-full justify-center items-center w-full">
+    <div className="flex flex-col text-2xl h-full justify-center items-center w-full animation-fade-in">
       <div>
         <div className="pb-10 max-w-full px-28">
           <p className="pb-4 text-start">Hi there!</p>
