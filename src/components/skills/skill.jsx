@@ -10,7 +10,7 @@ import githublogo from "../../assets/Skills/github.svg";
 
 const Skill = () => {
   return (
-    <div className="w-full grid grid-cols-4 grid-rows-2 justify-center items-center">
+    <div className="w-full grid grid-cols-4 grid-rows-2 justify-center items-center animation-fade-in">
       <img
         src={reactlogo}
         className="w-2/3 hover:opacity-50 duration-100"

@@ -8,7 +8,7 @@ const Profile = () => {
   return (
     <section
       id="profile"
-      className="w-full pl-0 md:p-10 h-screen flex flex-col justify-center items-center md:w-1/3"
+      className="w-full pl-0 md:p-10 h-screen flex flex-col justify-center items-center md:w-1/3 animation-fade-in"
     >
       <div className="profile-container flex flex-col items-center md:items-end">
         <img

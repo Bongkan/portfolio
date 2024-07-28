@@ -7,7 +7,7 @@ import ProfilePic from "../assets/Croped.jpg";
 const Contact = () => {
   return (
     <>
-      <div className="hidden text-center w-full md:flex md:flex-col justify-center">
+      <div className="hidden text-center w-full md:flex md:flex-col justify-center animation-fade-in">
         <h4 className="py-4">
           <a
             href="mailto:Bongkan.jj@gmail.com"
@@ -50,7 +50,7 @@ const Contact = () => {
       </div>
       <section
         id="profile"
-        className="w-full pl-0 md:p-10 h-screen flex flex-col justify-center items-center md:hidden"
+        className="w-full pl-0 md:p-10 h-screen flex flex-col justify-center items-center md:hidden animation-fade-in"
       >
         <div className="profile-container flex flex-col items-center md:items-end">
           <img
