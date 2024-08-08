@@ -66,15 +66,15 @@ const Experience = ({ showCompany, setShowCompany }) => {
             <img
               src={Generation}
               alt="Generation"
-              className="w-2/3 rounded-full "
+              className="w-2/3 rounded-full"
             />
-            <h2 className="pt-5 text-center">Generation Thailand</h2>
+            <h2 className="pt-5 text-center">Generation TH</h2>
             {/* <h2 className="pt-2 text-center">
               Junior Software Developer Bootcamp
             </h2> */}
           </div>
           <div
-            className={`w-1/3 flex items-center justify-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
+            className={`w-1/3 flex items-center justify-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer border-x-2 ${
               showCompany === "KBTG" ? "rounded-xl bg-white bg-opacity-10" : ""
             }`}
             onClick={() =>
