@@ -59,7 +59,7 @@ const Project = ({ showProject }) => {
             {activeProject === "CRUD" && (
               <div className="animation-fade-in">
                 <p className="text-center pt-2">
-                  React State manipulation to simulate CRUD Operation.
+                  Simple CRUD manipulation HTML, CSS and Javascript
                 </p>
                 <a
                   href="https://05-fear-js.vercel.app/"
@@ -131,7 +131,9 @@ const Project = ({ showProject }) => {
             >
               <img src={crud} alt="CRUD" className="h-2/3" />
             </a>
-            <p className="text-center pt-3">Simple CRUD manipulation</p>
+            <p className="text-center pt-3">
+              Simple CRUD manipulation HTML, CSS and Javascript
+            </p>
           </div>
         )}
         {showProject === "Colmar" && (
