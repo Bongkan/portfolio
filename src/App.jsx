@@ -62,7 +62,7 @@ const App = () => {
               {profileDesktop === "True" && activeSection === "Contact" && (
                 <Profile />
               )}
-              {profileDesktop === "True" && activeSection === "Experience" && (
+              {profileDesktop === "True" && activeSection === "Experiences" && (
                 <ExperienceDetails
                   showCompany={showCompany}
                   setShowCompany={setShowCompany}

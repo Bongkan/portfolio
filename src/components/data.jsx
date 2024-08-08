@@ -15,7 +15,7 @@ const DataSection = ({
   setShowCompany,
   showProject,
 }) => {
-  const sections = ["About", "Projects", "Experience", "Skills", "Contact"];
+  const sections = ["About", "Projects", "Experiences", "Skills", "Contact"];
 
   const handleScroll = (event) => {
     const currentIndex = sections.indexOf(activeSection);
@@ -68,7 +68,7 @@ const DataSection = ({
                 : "rounded-full shadow-[5px_5px_5px_rgb(2,110,2)] bg-white bg-opacity-10"
             }`}
             onClick={() => {
-              if (section === "Experience") setShowCompany("");
+              if (section === "Experiences") setShowCompany("");
               setActiveSection(section);
             }}
           >
@@ -80,7 +80,7 @@ const DataSection = ({
       <div className="h-full pb-[10vh] w-full flex pl-[5vw] md:pl-0 md:h-5/6">
         {activeSection === "Home" && <Profile />}
         {activeSection === "About" && <About />}
-        {activeSection === "Experience" && (
+        {activeSection === "Experiences" && (
           <Experience
             setShowCompany={setShowCompany}
             showCompany={showCompany}
