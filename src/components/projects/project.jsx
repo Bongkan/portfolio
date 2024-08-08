@@ -32,7 +32,7 @@ const Project = ({ showProject }) => {
                   stack
                 </p>
                 <p className="text-center">
-                  *Database may take a while to wakeup*
+                  *Database may take a while to wake up*
                 </p>
                 <a
                   href="https://jsd-7-cmfm-frontend.vercel.app/"
@@ -123,7 +123,9 @@ const Project = ({ showProject }) => {
             <p className="text-center pt-3">
               E-commerce website, a group project created using the MERN stack
             </p>
-            <p className="text-center">*Database may take a while to wakeup*</p>
+            <p className="text-center">
+              *Database may take a while to wake up*
+            </p>
           </div>
         )}
         {showProject === "CRUD" && (
