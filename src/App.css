@@ -45,7 +45,7 @@
 .background-container {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - env(safe-area-inset-bottom));
   background-image: url("./assets/panoramic-view-sunset-night.jpg");
   background-size: cover;
   background-position: center;
