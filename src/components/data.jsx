@@ -39,6 +39,18 @@ const DataSection = ({
     }
   };
 
+  const handleTap = (event) => {
+    const touchX = event.touches[0].clientX;
+    const screenWidth = window.innerWidth;
+    const tapThreshold = screenWidth * 0.1; // Define the tap area (20% of screen width)
+
+    if (touchX < tapThreshold) {
+      handleSwipe("RIGHT");
+    } else if (touchX > screenWidth - tapThreshold) {
+      handleSwipe("LEFT");
+    }
+  };
+
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => handleSwipe("LEFT"),
     onSwipedRight: () => handleSwipe("RIGHT"),
@@ -46,9 +58,11 @@ const DataSection = ({
 
   useEffect(() => {
     window.addEventListener("wheel", handleScroll);
+    window.addEventListener("touchstart", handleTap);
 
     return () => {
       window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("touchstart", handleTap);
     };
   }, [activeSection]);
 
