@@ -29,9 +29,6 @@ const Experience = ({ showCompany, setShowCompany }) => {
             className="w-2/3 rounded-full "
           />
           <h2 className="pt-5 text-center">Generation Thailand x GenKX</h2>
-          <h2 className="pt-2 text-center">
-            Junior Software Developer Bootcamp
-          </h2>
         </div>
         <div
           className={`w-1/3 flex items-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
@@ -41,7 +38,6 @@ const Experience = ({ showCompany, setShowCompany }) => {
         >
           <img src={KBTG} alt="Generation" className={`w-2/3`} />
           <h2 className="pt-5 text-center">KBTG Kampus</h2>
-          <h2 className="pt-2 text-center">Infrastructure Engineer Bootcamp</h2>
         </div>
         <div
           className={`w-1/3 flex items-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
@@ -51,9 +47,6 @@ const Experience = ({ showCompany, setShowCompany }) => {
         >
           <img src={SVI} alt="Generation" className="w-2/3 rounded-full" />
           <h2 className="pt-5 text-center">SVI Public Company Limited</h2>
-          <h2 className="pt-2 text-center">
-            Graduate Engineer – Program Management
-          </h2>
         </div>
       </div>
       <div className="flex flex-col justify-center min-h-[calc(100vh/2)] md:hidden">
