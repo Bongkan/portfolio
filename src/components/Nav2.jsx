@@ -38,7 +38,7 @@ const Nav2 = ({ activeSection, setActiveSection, showMenu, setShowMenu }) => {
 
   return (
     <nav
-      className={`ml-[10px] flex flex-col h-screen pr-5 md:hidden font-space ${
+      className={`ml-[10px] flex flex-col pr-5 md:hidden font-space ${
         showMenu !== "On" ? "fixed top-0 left-0 z-[100]" : "w-screen"
       }`}
     >

@@ -50,7 +50,7 @@ const Contact = () => {
       </div>
       <section
         id="profile"
-        className="w-full pl-0 md:p-10 h-screen flex flex-col justify-center items-center md:hidden animation-fade-in"
+        className="w-full pl-0 mt-[10vh] md:p-10 h-screen flex flex-col items-center md:hidden animation-fade-in"
       >
         <div className="profile-container flex flex-col items-center md:items-end">
           <img
