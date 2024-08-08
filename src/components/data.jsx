@@ -91,7 +91,7 @@ const DataSection = ({
           </div>
         ))}
       </div>
-      <div className="h-full pb-[10vh] w-full flex pl-[5vw] md:pl-0 md:h-5/6">
+      <div className="h-full py-[5vh] md:pt-0 w-full flex pl-[5vw] md:pl-0 md:h-5/6">
         {activeSection === "Home" && <Profile />}
         {activeSection === "About" && <About />}
         {activeSection === "Experiences" && (

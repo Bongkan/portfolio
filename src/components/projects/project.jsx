@@ -12,8 +12,8 @@ const Project = ({ showProject }) => {
 
   return (
     <div className="pt-[5vh] pb-10 flex flex-col md:flex-row justify-around w-full pr-5 md:pr-10 animation-fade-in">
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="flex flex-col justify-center md:hidden h-full max-w-sm my-[10vh]">
+      <div className="flex justify-center items-center h-full">
+        <div className="flex flex-col justify-center md:hidden h-full max-w-sm">
           <div className="md:h-1/3">
             <p
               className={`text-xl text-center py-5 hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
