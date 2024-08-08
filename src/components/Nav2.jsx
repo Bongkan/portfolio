@@ -14,7 +14,7 @@ const Nav2 = ({ activeSection, setActiveSection, showMenu, setShowMenu }) => {
 
   const renderNav = () => {
     return (
-      <ul className="h-full mt-2 flex flex-col justify-evenly md:hidden">
+      <ul className="h-full mt-2 w-full justify-center flex flex-col md:hidden">
         {sections.map((section) => (
           <li
             key={section}
@@ -38,7 +38,7 @@ const Nav2 = ({ activeSection, setActiveSection, showMenu, setShowMenu }) => {
 
   return (
     <nav
-      className={`ml-[10px] flex flex-col h-screen md:hidden ${
+      className={`ml-[10px] flex flex-col w-screen h-screen pr-5 md:hidden ${
         showMenu !== "On" ? "fixed top-0 left-0 z-[100]" : ""
       }`}
     >
