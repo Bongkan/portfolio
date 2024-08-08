@@ -6,6 +6,7 @@ import Contact from "./Contact.jsx";
 import Skill from "./skills/skill";
 import Project from "./projects/project.jsx";
 import Profile from "./profileCard";
+import { useSwipeable } from "react-swipeable";
 
 const DataSection = ({
   activeSection,
@@ -27,6 +28,22 @@ const DataSection = ({
     }
   };
 
+  const handleSwipe = (direction) => {
+    const currentIndex = sections.indexOf(activeSection);
+    if (direction === "LEFT") {
+      const nextIndex = (currentIndex + 1) % sections.length;
+      setActiveSection(sections[nextIndex]);
+    } else if (direction === "RIGHT") {
+      const prevIndex = (currentIndex - 1 + sections.length) % sections.length;
+      setActiveSection(sections[prevIndex]);
+    }
+  };
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => handleSwipe("LEFT"),
+    onSwipedRight: () => handleSwipe("RIGHT"),
+  });
+
   useEffect(() => {
     window.addEventListener("wheel", handleScroll);
 
@@ -36,7 +53,11 @@ const DataSection = ({
   }, [activeSection]);
 
   return (
-    <section id="data" className="md:w-2/3 flex md:flex-col h-screen ">
+    <section
+      id="data"
+      className="md:w-2/3 flex md:flex-col h-screen "
+      {...swipeHandlers}
+    >
       <div className="hidden md:flex flex-col md:flex-row justify-around font-space md:h-1/6">
         {sections.map((section) => (
           <div
