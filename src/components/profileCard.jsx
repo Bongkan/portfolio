@@ -44,6 +44,14 @@ const Profile = () => {
         <h4>
           <i>" Former engineer into a new journey "</i>
         </h4>
+        <div className="rounded-lg px-3 py-2 bg-[#E4E3E850] hover:opacity-90 hover:bg-white hover:rounded hover:border-2 duration-100 hover:text-black mt-5 md:hidden">
+          <a
+            href="https://drive.google.com/file/d/1ZE6iCBqo6xYdCI1-GqfkcbdWUYb0KWeL/view?usp=sharing"
+            target="_blank"
+          >
+            Download My resume?
+          </a>
+        </div>
       </div>
     </section>
   );
