@@ -31,6 +31,9 @@ const Project = ({ showProject }) => {
                   E-commerce website, a group project created using the MERN
                   stack
                 </p>
+                <p className="text-center">
+                  *Database may take a while to wakeup*
+                </p>
                 <a
                   href="https://jsd-7-cmfm-frontend.vercel.app/"
                   target="_blank"
@@ -59,7 +62,7 @@ const Project = ({ showProject }) => {
             {activeProject === "CRUD" && (
               <div className="animation-fade-in">
                 <p className="text-center pt-2">
-                  Simple CRUD manipulation HTML, CSS and Javascript
+                  Simple CRUD operation using HTML, CSS and Javascript
                 </p>
                 <a
                   href="https://05-fear-js.vercel.app/"
@@ -120,6 +123,7 @@ const Project = ({ showProject }) => {
             <p className="text-center pt-3">
               E-commerce website, a group project created using the MERN stack
             </p>
+            <p className="text-center">*Database may take a while to wakeup*</p>
           </div>
         )}
         {showProject === "CRUD" && (
@@ -132,7 +136,7 @@ const Project = ({ showProject }) => {
               <img src={crud} alt="CRUD" className="h-2/3" />
             </a>
             <p className="text-center pt-3">
-              Simple CRUD manipulation HTML, CSS and Javascript
+              Simple CRUD operation using HTML, CSS and Javascript
             </p>
           </div>
         )}
