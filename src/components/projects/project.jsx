@@ -16,9 +16,9 @@ const Project = ({ showProject }) => {
         <div className="flex flex-col justify-center md:hidden h-full max-w-sm">
           <div className="md:h-1/3">
             <p
-              className={`text-xl text-center py-5 hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
-                showProject === "Pony Mart"
-                  ? "rounded-xl bg-white bg-opacity-10"
+              className={`text-xl text-center py-5 hover:opacity-50 duration-100 ease-in hover:cursor-pointer rounded-xl bg-white bg-opacity-10 ${
+                activeProject === "Pony Mart"
+                  ? "shadow-[5px_5px_5px_rgb(2,110,2)]"
                   : ""
               }`}
               onClick={() => handleClick("Pony Mart")}
@@ -30,6 +30,9 @@ const Project = ({ showProject }) => {
                 <p className="text-center py-2">
                   E-commerce website, a group project created using the MERN
                   stack
+                </p>
+                <p className="text-center">
+                  *Database may take a while to wake up*
                 </p>
                 <a
                   href="https://jsd-7-cmfm-frontend.vercel.app/"
@@ -47,9 +50,9 @@ const Project = ({ showProject }) => {
           </div>
           <div className="md:h-1/3 my-[5vh]">
             <p
-              className={`text-xl text-center py-5 hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
-                showProject === "Pony Mart"
-                  ? "rounded-xl bg-white bg-opacity-10"
+              className={`text-xl text-center py-5 hover:opacity-50 duration-100 ease-in hover:cursor-pointer rounded-xl bg-white bg-opacity-10 ${
+                activeProject === "CRUD"
+                  ? "shadow-[5px_5px_5px_rgb(2,110,2)]"
                   : ""
               }`}
               onClick={() => handleClick("CRUD")}
@@ -59,7 +62,7 @@ const Project = ({ showProject }) => {
             {activeProject === "CRUD" && (
               <div className="animation-fade-in">
                 <p className="text-center pt-2">
-                  Simple CRUD manipulation HTML, CSS and Javascript
+                  Simple CRUD operation using HTML, CSS and Javascript
                 </p>
                 <a
                   href="https://05-fear-js.vercel.app/"
@@ -77,9 +80,9 @@ const Project = ({ showProject }) => {
           </div>
           <div className="md:h-1/3">
             <p
-              className={`text-xl text-center py-5 hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
-                showProject === "Pony Mart"
-                  ? "rounded-xl bg-white bg-opacity-10"
+              className={`text-xl text-center py-5 hover:opacity-50 duration-100 ease-in hover:cursor-pointer rounded-xl bg-white bg-opacity-10 ${
+                activeProject === "Colmar"
+                  ? "shadow-[5px_5px_5px_rgb(2,110,2)]"
                   : ""
               }`}
               onClick={() => handleClick("Colmar")}
@@ -120,6 +123,9 @@ const Project = ({ showProject }) => {
             <p className="text-center pt-3">
               E-commerce website, a group project created using the MERN stack
             </p>
+            <p className="text-center">
+              *Database may take a while to wake up*
+            </p>
           </div>
         )}
         {showProject === "CRUD" && (
@@ -132,7 +138,7 @@ const Project = ({ showProject }) => {
               <img src={crud} alt="CRUD" className="h-2/3" />
             </a>
             <p className="text-center pt-3">
-              Simple CRUD manipulation HTML, CSS and Javascript
+              Simple CRUD operation using HTML, CSS and Javascript
             </p>
           </div>
         )}

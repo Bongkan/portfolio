@@ -14,11 +14,11 @@ const Nav2 = ({ activeSection, setActiveSection, showMenu, setShowMenu }) => {
 
   const renderNav = () => {
     return (
-      <ul className="h-full mt-2 w-full justify-center flex flex-col md:hidden">
+      <ul className="h-full mt-2 pb-11 w-full justify-around flex flex-col md:hidden">
         {sections.map((section) => (
           <li
             key={section}
-            className={`mt-3 w-full p-0 h-[120px] text-center hover:cursor-pointer text-xl font-medium ${
+            className={`mt-3 w-full p-0 h-[100px] text-center hover:cursor-pointer text-xl font-medium ${
               activeSection !== section
                 ? "flex items-center justify-center hover:opacity-50 hover:shadow-[5px_5px_5px_rgb(2,110,2)] rounded-full duration-[750ms]"
                 : "shadow-[5px_0px_5px_rgb(2,110,2)] bg-white bg-opacity-10 rounded-full"
@@ -39,7 +39,7 @@ const Nav2 = ({ activeSection, setActiveSection, showMenu, setShowMenu }) => {
   return (
     <nav
       className={`ml-[10px] flex flex-col pr-5 md:hidden font-space ${
-        showMenu !== "On" ? "fixed top-0 left-0 z-[100]" : "w-screen"
+        showMenu !== "On" ? "fixed top-0 left-0 z-[100]" : "w-screen h-full"
       }`}
     >
       <a onClick={ToggleUFO}>

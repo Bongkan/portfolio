@@ -14,6 +14,7 @@ const DataSection = ({
   showCompany,
   setShowCompany,
   showProject,
+  profileDesktop,
 }) => {
   const sections = ["About", "Projects", "Experiences", "Skills", "Contact"];
 
@@ -91,8 +92,9 @@ const DataSection = ({
           </div>
         ))}
       </div>
-      <div className="h-full py-[5vh] md:pt-0 w-full flex pl-[5vw] md:pl-0 md:h-5/6">
-        {activeSection === "Home" && <Profile />}
+      <div className="h-full py-[5vh] md:pt-0 w-full flex px-[5vw] md:pl-0 md:h-5/6">
+        {activeSection === "Home" && profileDesktop === "True" && <Profile />}
+        {activeSection === "Home" && profileDesktop === "False" && <Contact />}
         {activeSection === "About" && <About />}
         {activeSection === "Experiences" && (
           <Experience
