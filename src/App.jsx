@@ -37,8 +37,8 @@ const App = () => {
   return (
     <div className="background-container text-white">
       <BackgroundStarGenerator />
-      <div className="content absolute z-10">
-        <div className="animation-loading w-full">
+      <div className="content absolute z-10 h-full">
+        <div className="animation-loading w-full h-full">
           <Nav2
             activeSection={activeSection}
             setActiveSection={setActiveSection}
@@ -75,6 +75,7 @@ const App = () => {
                 setShowCompany={setShowCompany}
                 showProject={showProject}
                 setShowProject={setShowProject}
+                profileDesktop={profileDesktop}
               />
             </main>
           )}

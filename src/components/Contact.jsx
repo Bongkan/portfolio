@@ -7,7 +7,7 @@ import ProfilePic from "../assets/Croped.jpg";
 const Contact = () => {
   return (
     <>
-      <div className="hidden text-center w-full md:flex md:flex-col justify-center animation-fade-in">
+      <div className="hidden text-center w-full md:flex md:flex-col justify-center animation-fade-in rounded-full shadow-[0px_5px_50px_rgb(2,110,2)] bg-white bg-opacity-10 m-[10vh]">
         <h4 className="py-4">
           <a
             href="mailto:Bongkan.jj@gmail.com"
@@ -27,7 +27,7 @@ const Contact = () => {
         <div className="flex justify-center py-4">
           <a target="_blank" href="https://www.facebook.com/Nanosweet159/">
             <img
-              className="soc w-[150px] hover:opacity-50 duration-100"
+              className="soc w-[150px] hover:opacity-50 duration-100 "
               src={Face}
               alt="Facebook"
             />

@@ -11,7 +11,7 @@ const ExperienceDetails = ({ showCompany }) => {
         </>
       )}
       {showCompany === "Generation" && (
-        <div className="flex flex-col">
+        <div className="flex flex-col rounded-xl bg-white bg-opacity-10 w-[350px] h-[250px] justify-center px-5">
           <p className="pb-5 text-center">Apr 2024 – Jul 2024</p>
           <p className="text-center pb-2">Junior Software Developer Bootcamp</p>
           <p>• Full Stack with MERN Stack</p>
@@ -20,7 +20,7 @@ const ExperienceDetails = ({ showCompany }) => {
         </div>
       )}
       {showCompany === "KBTG" && (
-        <div className="flex flex-col">
+        <div className="flex flex-col rounded-xl bg-white bg-opacity-10 w-[350px] h-[250px] justify-center px-5">
           <p className="pb-5 text-center">Sep 2023 – Dec 2023</p>
           <p className="text-center pb-2">Infrastructure Engineer Bootcamp</p>
           <p>• DevOps Practices</p>
@@ -29,7 +29,7 @@ const ExperienceDetails = ({ showCompany }) => {
         </div>
       )}
       {showCompany === "SVI" && (
-        <div className="flex flex-col">
+        <div className="flex flex-col rounded-xl bg-white bg-opacity-10 w-[350px] h-[250px] justify-center px-5">
           <p className="pb-5 text-center">Oct 2021 – Aug 2022</p>
           <p className="text-center pb-2">
             Graduate Engineer – Program Management

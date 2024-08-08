@@ -18,7 +18,7 @@ const Experience = ({ showCompany, setShowCompany }) => {
         <div
           className={`w-1/3 flex items-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
             showCompany === "Generation"
-              ? "rounded-xl bg-white bg-opacity-10"
+              ? "rounded-xl bg-white bg-opacity-10 shadow-[5px_5px_5px_rgb(2,110,2)]"
               : ""
           }`}
           onClick={() => setShowCompany("Generation")}
@@ -32,7 +32,9 @@ const Experience = ({ showCompany, setShowCompany }) => {
         </div>
         <div
           className={`w-1/3 flex items-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
-            showCompany === "KBTG" ? "rounded-xl bg-white bg-opacity-10" : ""
+            showCompany === "KBTG"
+              ? "rounded-xl bg-white bg-opacity-10 shadow-[5px_5px_5px_rgb(2,110,2)]"
+              : ""
           }`}
           onClick={() => setShowCompany("KBTG")}
         >
@@ -41,7 +43,9 @@ const Experience = ({ showCompany, setShowCompany }) => {
         </div>
         <div
           className={`w-1/3 flex items-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
-            showCompany === "SVI" ? "rounded-xl bg-white bg-opacity-10" : ""
+            showCompany === "SVI"
+              ? "rounded-xl bg-white bg-opacity-10 shadow-[5px_5px_5px_rgb(2,110,2)]"
+              : ""
           }`}
           onClick={() => setShowCompany("SVI")}
         >
@@ -50,12 +54,12 @@ const Experience = ({ showCompany, setShowCompany }) => {
         </div>
       </div>
       <div className="flex flex-col justify-center min-h-[calc(100vh/2)] md:hidden">
-        <div className="flex p-5">
+        <div className="flex p-2">
           <div
-            className={`w-1/3 flex items-center justify-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
+            className={`border-r-2 pr-2 w-1/3 flex items-center justify-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
               showCompany === "Generation"
-                ? "rounded-xl bg-white bg-opacity-10"
-                : ""
+                ? "rounded-xl bg-white bg-opacity-10 border-x-2"
+                : showCompany === "KBTG" && "border-none"
             }`}
             onClick={() =>
               showCompany !== "Generation"
@@ -74,8 +78,10 @@ const Experience = ({ showCompany, setShowCompany }) => {
             </h2> */}
           </div>
           <div
-            className={`w-1/3 flex items-center justify-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer border-x-2 ${
-              showCompany === "KBTG" ? "rounded-xl bg-white bg-opacity-10" : ""
+            className={`px-1 w-1/3 flex items-center justify-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer mx-2 ${
+              showCompany === "KBTG"
+                ? "rounded-xl bg-white bg-opacity-10 border-x-2"
+                : ""
             }`}
             onClick={() =>
               showCompany !== "KBTG"
@@ -90,8 +96,10 @@ const Experience = ({ showCompany, setShowCompany }) => {
             </h2> */}
           </div>
           <div
-            className={`w-1/3 flex items-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
-              showCompany === "SVI" ? "rounded-xl bg-white bg-opacity-10" : ""
+            className={`border-l-2 pl-2 w-1/3 flex items-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
+              showCompany === "SVI"
+                ? "rounded-xl bg-white bg-opacity-10 border-x-2"
+                : showCompany === "KBTG" && "border-none"
             }`}
             onClick={() =>
               showCompany !== "SVI" ? setShowCompany("SVI") : setShowCompany("")
@@ -102,7 +110,7 @@ const Experience = ({ showCompany, setShowCompany }) => {
           </div>
         </div>
         {showCompany === "Generation" && (
-          <div className="p-4 flex flex-col animation-fade-in">
+          <div className="py-4 px-2 flex flex-col animation-fade-in  rounded-xl bg-white bg-opacity-10">
             <p className="pb-5 text-center">Apr 2024 – Jul 2024</p>
             <p className="text-center pb-2">
               Junior Software Developer Bootcamp
@@ -113,7 +121,7 @@ const Experience = ({ showCompany, setShowCompany }) => {
           </div>
         )}
         {showCompany === "KBTG" && (
-          <div className="p-4 flex flex-col animation-fade-in">
+          <div className="py-4 px-2 flex flex-col animation-fade-in rounded-xl bg-white bg-opacity-10">
             <p className="pb-5 text-center">Sep 2023 – Dec 2023</p>
             <p className="text-center pb-2">Infrastructure Engineer Bootcamp</p>
             <p>• DevOps Practices</p>
@@ -122,7 +130,7 @@ const Experience = ({ showCompany, setShowCompany }) => {
           </div>
         )}
         {showCompany === "SVI" && (
-          <div className="p-4 flex flex-col animation-fade-in">
+          <div className="py-4 px-2 flex flex-col animation-fade-in rounded-xl bg-white bg-opacity-10">
             <p className="pb-5 text-center">Oct 2021 – Aug 2022</p>
             <p className="text-center pb-2">
               Graduate Engineer – Program Management

@@ -16,9 +16,9 @@ const Project = ({ showProject }) => {
         <div className="flex flex-col justify-center md:hidden h-full max-w-sm">
           <div className="md:h-1/3">
             <p
-              className={`text-xl text-center py-5 hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
-                showProject === "Pony Mart"
-                  ? "rounded-xl bg-white bg-opacity-10"
+              className={`text-xl text-center py-5 hover:opacity-50 duration-100 ease-in hover:cursor-pointer rounded-xl bg-white bg-opacity-10 ${
+                activeProject === "Pony Mart"
+                  ? "shadow-[5px_5px_5px_rgb(2,110,2)]"
                   : ""
               }`}
               onClick={() => handleClick("Pony Mart")}
@@ -50,9 +50,9 @@ const Project = ({ showProject }) => {
           </div>
           <div className="md:h-1/3 my-[5vh]">
             <p
-              className={`text-xl text-center py-5 hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
-                showProject === "Pony Mart"
-                  ? "rounded-xl bg-white bg-opacity-10"
+              className={`text-xl text-center py-5 hover:opacity-50 duration-100 ease-in hover:cursor-pointer rounded-xl bg-white bg-opacity-10 ${
+                activeProject === "CRUD"
+                  ? "shadow-[5px_5px_5px_rgb(2,110,2)]"
                   : ""
               }`}
               onClick={() => handleClick("CRUD")}
@@ -80,9 +80,9 @@ const Project = ({ showProject }) => {
           </div>
           <div className="md:h-1/3">
             <p
-              className={`text-xl text-center py-5 hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
-                showProject === "Pony Mart"
-                  ? "rounded-xl bg-white bg-opacity-10"
+              className={`text-xl text-center py-5 hover:opacity-50 duration-100 ease-in hover:cursor-pointer rounded-xl bg-white bg-opacity-10 ${
+                activeProject === "Colmar"
+                  ? "shadow-[5px_5px_5px_rgb(2,110,2)]"
                   : ""
               }`}
               onClick={() => handleClick("Colmar")}

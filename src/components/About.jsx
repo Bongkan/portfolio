@@ -3,16 +3,17 @@ const About = () => {
   return (
     <div className="flex flex-col text-sm md:text-2xl h-full justify-center items-center w-full animation-fade-in">
       <div>
-        <div className="max-w-full px-10 py-10 md:pt-0 md:px-28">
+        <div className="p-10 md:px-24 md:mt-[5vh] rounded-xl text-sm md:text-2xl bg-white bg-opacity-10 shadow-[0px_5px_5px_rgb(2,110,2)] text-justify leading-6">
           <p className="pb-4 text-start">Hi there!</p>
           <p className="pb-4">
-            I'm a tech learner with a background in mechanical engineering.
+            I’m a career switcher with a background in mechanical engineering,
+            driven by a strong passion for technology and problem-solving.
           </p>
-          <p className="pb-4">
-            My passion for innovation and problem-solving has led me to explore
-            the dynamic world of technology.
+          <p>
+            My enthusiasm has led me to explore the dynamic tech industry, and
+            I’m excited to contribute to and grow within this ever-evolving
+            field.
           </p>
-          <p>I am excited to be a part of this ever-growing industry!</p>
         </div>
       </div>
       <div className="rounded-lg px-3 py-2 bg-[#E4E3E850] hover:opacity-90 hover:bg-white hover:rounded hover:border-2 duration-100 hover:text-black mt-5">
