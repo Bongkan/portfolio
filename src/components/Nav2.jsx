@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import UfoContainer from "./UfoContainer";
 
 const Nav2 = ({ activeSection, setActiveSection, showMenu, setShowMenu }) => {
-  const sections = ["Home", "Projects", "Experience", "Skills"];
+  const sections = ["Home", "About", "Projects", "Experiences", "Skills"];
 
   const handleClick = (section) => {
     setActiveSection(section);
@@ -38,7 +38,7 @@ const Nav2 = ({ activeSection, setActiveSection, showMenu, setShowMenu }) => {
 
   return (
     <nav
-      className={`ml-[10px] flex flex-col h-screen pr-5 md:hidden ${
+      className={`ml-[10px] flex flex-col h-screen pr-5 md:hidden font-space ${
         showMenu !== "On" ? "fixed top-0 left-0 z-[100]" : "w-screen"
       }`}
     >

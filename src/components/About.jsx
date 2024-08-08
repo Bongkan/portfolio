@@ -15,7 +15,7 @@ const About = () => {
           <p>I am excited to be a part of this ever-growing industry!</p>
         </div>
       </div>
-      <div className="hover:opacity-90 hover:bg-white hover:rounded hover:border-2 duration-100 hover:text-black">
+      <div className="rounded-lg px-3 py-2 bg-[#E4E3E850] hover:opacity-90 hover:bg-white hover:rounded hover:border-2 duration-100 hover:text-black mt-5">
         <a
           href="https://drive.google.com/file/d/1ZE6iCBqo6xYdCI1-GqfkcbdWUYb0KWeL/view?usp=sharing"
           target="_blank"

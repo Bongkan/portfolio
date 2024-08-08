@@ -10,7 +10,9 @@ const UfoContainer = ({ activeSection }) => {
         alt="ufo-logo"
         className="w-[50px] md:w-[75px]"
       />
-      <h1 className="pl-3 text-xl font-medium">{activeSection}</h1>
+      <h1 className="pl-3 text-xl font-medium">
+        {activeSection === "Contact" ? "Home" : activeSection}
+      </h1>
     </div>
   );
 };
