@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#000000"/>
+  
+  <!-- Logo Mark -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="60" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Top left main shape (stylized 7) -->
+    <path d="M 150 100 L 350 100 L 150 300" />
+    
+    <!-- Bottom right complementary shape -->
+    <path d="M 320 240 L 260 300 L 350 300" />
+  </g>
+
+  <!-- Typography: "ZYGEN" (Constructed with precision paths to maintain geometry) -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Z -->
+    <path d="M 160 385 L 186 385 L 160 415 L 186 415" />
+    
+    <!-- Y -->
+    <path d="M 198.5 385 L 211.5 402 L 224.5 385 M 211.5 402 L 211.5 415" />
+    
+    <!-- G -->
+    <path d="M 260 391 A 13 15 0 1 0 260 409 L 260 402 L 250 402" />
+    
+    <!-- E -->
+    <path d="M 301.5 385 L 275.5 385 L 275.5 415 L 301.5 415 M 275.5 400 L 296 400" />
+    
+    <!-- N -->
+    <path d="M 314 415 L 314 385 L 340 415 L 340 385" />
+  </g>
+</svg>

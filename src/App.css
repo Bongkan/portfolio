@@ -80,11 +80,60 @@
 }
 
 .animation-fade-in {
-  animation: fadeIn 0.4s ease-out forwards;
+  animation: fadeIn 0.15s ease-out forwards;
 }
 
 .animation-float {
   animation: floatUfo 3.5s ease-in-out infinite;
+}
+
+@keyframes abductLift {
+  0%, 100% {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(0, 240, 118, 0.4);
+  }
+  50% {
+    transform: translateY(-4px);
+    box-shadow: 0 0 18px rgba(0, 240, 118, 0.6);
+  }
+}
+
+.animation-abduct-lift {
+  animation: abductLift 2.2s ease-in-out infinite;
+}
+
+@keyframes beamPulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.92;
+  }
+}
+
+.animation-beam-pulse {
+  animation: beamPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes ringRise {
+  0% {
+    transform: translateY(14px) scale(1.15);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-12px) scale(0.35);
+    opacity: 0;
+  }
+}
+
+.animation-ring-rise-1 {
+  animation: ringRise 1.4s ease-out infinite;
+}
+.animation-ring-rise-2 {
+  animation: ringRise 1.4s ease-out infinite 0.45s;
+}
+.animation-ring-rise-3 {
+  animation: ringRise 1.4s ease-out infinite 0.9s;
 }
 
 .background-container {
@@ -101,6 +150,16 @@
   background-position: center;
   background-attachment: fixed;
   overflow-x: hidden;
+}
+
+@media (max-width: 767px) {
+  html, body {
+    min-height: 100%;
+  }
+  .background-container {
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
 }
 
 .random-dots-container {

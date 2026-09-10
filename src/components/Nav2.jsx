@@ -1,12 +1,5 @@
 import Ufo from "../assets/ufo-flying-svgrepo-com.svg";
-
-const navSections = [
-  { id: "About", label: "About", icon: "👤" },
-  { id: "Experiences", label: "Experience", icon: "💼" },
-  { id: "Skills", label: "Skills", icon: "⚡" },
-  { id: "Projects", label: "Projects", icon: "🚀" },
-  { id: "Contact", label: "Contact", icon: "📡" },
-];
+import { navSections } from "./portfolioData.js";
 
 const Nav2 = ({ activeSection, setActiveSection, showMenu, setShowMenu }) => {
   const isMenuOpen = showMenu === "On";
@@ -38,7 +31,7 @@ const Nav2 = ({ activeSection, setActiveSection, showMenu, setShowMenu }) => {
             <span className="font-space text-sm font-bold text-white tracking-wider block">
               BONGKAN.J
             </span>
-            <span className="text-[10px] text-emerald-400 font-space block -mt-1">
+            <span className="text-[11px] text-emerald-400 font-grotesk block -mt-0.5 font-medium">
               SAP ABAP Consultant
             </span>
           </div>
@@ -46,7 +39,7 @@ const Nav2 = ({ activeSection, setActiveSection, showMenu, setShowMenu }) => {
 
         {/* Current Active Section Badge & Hamburger Button */}
         <div className="flex items-center gap-2">
-          <span className="text-[11px] font-space px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold">
+          <span className="text-xs font-grotesk px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold">
             {activeSection}
           </span>
           <button
@@ -71,8 +64,8 @@ const Nav2 = ({ activeSection, setActiveSection, showMenu, setShowMenu }) => {
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 top-[57px] z-40 bg-slate-950/95 backdrop-blur-2xl animation-fade-in flex flex-col justify-between p-6 overflow-y-auto">
           <div className="space-y-2 pt-2">
-            <p className="text-[11px] font-space text-slate-400 uppercase tracking-widest px-2 mb-3">
-              Navigation Index
+            <p className="text-xs font-grotesk text-slate-400 uppercase tracking-wider px-2 mb-3 font-semibold">
+              Navigation Menu
             </p>
             {navSections.map((sec) => {
               const isActive = activeSection === sec.id;
@@ -80,7 +73,7 @@ const Nav2 = ({ activeSection, setActiveSection, showMenu, setShowMenu }) => {
                 <button
                   key={sec.id}
                   onClick={() => handleSelect(sec.id)}
-                  className={`w-full flex items-center justify-between p-4 rounded-xl font-space text-left text-sm transition-all border ${
+                  className={`w-full flex items-center justify-between p-4 rounded-xl font-grotesk text-left text-sm transition-all border ${
                     isActive
                       ? "bg-emerald-950/70 border-emerald-400 text-white shadow-neon-green"
                       : "bg-slate-900/50 border-white/10 text-slate-300 hover:text-white hover:border-emerald-500/30"
@@ -106,6 +99,9 @@ const Nav2 = ({ activeSection, setActiveSection, showMenu, setShowMenu }) => {
           <div className="pt-6 border-t border-white/10 mt-6 text-center space-y-2">
             <p className="text-xs text-slate-400">
               Chiang Mai University • Mechanical Engineering
+            </p>
+            <p className="text-[11px] text-emerald-300">
+              Bangkok • Chiang Mai • Lamphun, Thailand
             </p>
             <div className="flex items-center justify-center gap-2 text-xs text-emerald-400">
               <span>Bongkan.jj@gmail.com</span>
