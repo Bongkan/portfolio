@@ -1,80 +1,198 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@keyframes fadeInFromCenter {
-  0% {
-    opacity: 0;
-    transform: scale(0);
+@layer utilities {
+  .glass-panel {
+    background: rgba(10, 15, 30, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(16, 185, 129, 0.22);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
   }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+
+  .glass-card-hover {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(15, 23, 42, 0.85);
+    border-color: rgba(0, 240, 118, 0.45);
+    box-shadow: 0 0 20px rgba(0, 240, 118, 0.25), 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .glass-pill {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 12px rgba(0, 240, 118, 0.5);
+  }
+
+  .cyber-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .cyber-scrollbar::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 9999px;
+  }
+  .cyber-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(16, 185, 129, 0.4);
+    border-radius: 9999px;
+  }
+  .cyber-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 240, 118, 0.7);
   }
 }
 
-@keyframes slideInFromCenter {
-  0% {
+@keyframes fadeIn {
+  from {
     opacity: 0;
-    transform: translateY(-50%);
+    transform: translateY(6px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
+@keyframes floatUfo {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
   }
-  100% {
-    opacity: 1;
+  50% {
+    transform: translateY(-6px) rotate(2deg);
   }
 }
 
-.animation-loading {
-  animation: fadeInFromCenter 1.5s ease-out forwards;
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0, 240, 118, 0.6);
+  }
 }
 
 .animation-fade-in {
-  animation: fadeIn 1.5s;
+  animation: fadeIn 0.15s ease-out forwards;
+}
+
+.animation-float {
+  animation: floatUfo 3.5s ease-in-out infinite;
+}
+
+@keyframes abductLift {
+  0%, 100% {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(0, 240, 118, 0.4);
+  }
+  50% {
+    transform: translateY(-4px);
+    box-shadow: 0 0 18px rgba(0, 240, 118, 0.6);
+  }
+}
+
+.animation-abduct-lift {
+  animation: abductLift 2.2s ease-in-out infinite;
+}
+
+@keyframes beamPulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.92;
+  }
+}
+
+.animation-beam-pulse {
+  animation: beamPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes ringRise {
+  0% {
+    transform: translateY(14px) scale(1.15);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-12px) scale(0.35);
+    opacity: 0;
+  }
+}
+
+.animation-ring-rise-1 {
+  animation: ringRise 1.4s ease-out infinite;
+}
+.animation-ring-rise-2 {
+  animation: ringRise 1.4s ease-out infinite 0.45s;
+}
+.animation-ring-rise-3 {
+  animation: ringRise 1.4s ease-out infinite 0.9s;
 }
 
 .background-container {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  min-height: 100svh;
-  background-image: url("./assets/panoramic-view-sunset-night.jpg");
+  min-height: 100dvh;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(3, 7, 18, 0.78),
+      rgba(3, 7, 18, 0.88)
+    ),
+    url("./assets/panoramic-view-sunset-night.jpg");
   background-size: cover;
   background-position: center;
-  overflow: hidden;
+  background-attachment: fixed;
+  overflow-x: hidden;
 }
+
+@media (max-width: 767px) {
+  html, body {
+    min-height: 100%;
+  }
+  .background-container {
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+}
+
 .random-dots-container {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-}
-.dot {
-  position: absolute;
-  z-index: 2;
-  background-color: #fff;
-  border-radius: 50%;
-  animation: zoomIn 2s infinite alternate;
+  pointer-events: none;
+  z-index: 1;
 }
 
-@keyframes zoomIn {
+.dot {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
   0% {
-    transform: scale(0.5) translate(-50%, -50%);
-    opacity: 0.5;
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.3);
+    box-shadow: 0 0 4px #00f076;
   }
   100% {
-    transform: scale(1) translate(0, 0);
-    opacity: 1;
+    opacity: 0.3;
+    transform: scale(0.9);
   }
 }
+
