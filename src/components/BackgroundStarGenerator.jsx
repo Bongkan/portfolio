@@ -1,33 +1,34 @@
-import React, { useEffect, useState } from "react";
-import "../App.css";
+import { useEffect, useState } from "react";
 
 const BackgroundStarGenerator = () => {
   const [dots, setDots] = useState([]);
 
   useEffect(() => {
-    const generateDots = () => {
-      const numDots = 100;
-      const newDots = Array.from({ length: numDots }, () => ({
-        top: `${Math.random() * 100}vh`,
-        left: `${Math.random() * 100}vw`,
-        size: `${Math.random() * 1 + 2}px`,
-      }));
-      setDots(newDots);
-    };
-    generateDots();
+    const numDots = 75;
+    const newDots = Array.from({ length: numDots }, (_, i) => ({
+      id: i,
+      top: `${(Math.random() * 100).toFixed(2)}%`,
+      left: `${(Math.random() * 100).toFixed(2)}%`,
+      size: `${(Math.random() * 2 + 1.2).toFixed(1)}px`,
+      delay: `${(Math.random() * 4).toFixed(2)}s`,
+      duration: `${(Math.random() * 3 + 2).toFixed(2)}s`,
+    }));
+    setDots(newDots);
   }, []);
 
   return (
-    <div className="random-dots-container">
-      {dots.map((dot, index) => (
+    <div className="random-dots-container" aria-hidden="true">
+      {dots.map((dot) => (
         <div
-          key={index}
+          key={dot.id}
           className="dot"
           style={{
             top: dot.top,
             left: dot.left,
             width: dot.size,
             height: dot.size,
+            animationDelay: dot.delay,
+            animationDuration: dot.duration,
           }}
         />
       ))}

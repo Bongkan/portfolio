@@ -1,12 +1,16 @@
-import React, { useEffect } from "react";
-import UfoContainer from "./UfoContainer";
 import About from "./About.jsx";
 import Experience from "./experience/experienceLogo.jsx";
 import Contact from "./Contact.jsx";
 import Skill from "./skills/skill";
 import Project from "./projects/project.jsx";
-import Profile from "./profileCard";
-import { useSwipeable } from "react-swipeable";
+
+const sections = [
+  { id: "About", label: "About", icon: "👤" },
+  { id: "Experiences", label: "Experience", icon: "💼" },
+  { id: "Skills", label: "Skills", icon: "⚡" },
+  { id: "Projects", label: "Projects", icon: "🚀" },
+  { id: "Contact", label: "Contact", icon: "📡" },
+];
 
 const DataSection = ({
   activeSection,
@@ -14,87 +18,44 @@ const DataSection = ({
   showCompany,
   setShowCompany,
   showProject,
-  profileDesktop,
 }) => {
-  const sections = ["About", "Projects", "Experiences", "Skills", "Contact"];
-
-  const handleScroll = (event) => {
-    const currentIndex = sections.indexOf(activeSection);
-    if (event.deltaY > 0) {
-      const nextIndex = (currentIndex + 1) % sections.length;
-      setActiveSection(sections[nextIndex]);
-    } else {
-      const prevIndex = (currentIndex - 1 + sections.length) % sections.length;
-      setActiveSection(sections[prevIndex]);
-    }
-  };
-
-  const handleSwipe = (direction) => {
-    const currentIndex = sections.indexOf(activeSection);
-    if (direction === "LEFT") {
-      const nextIndex = (currentIndex + 1) % sections.length;
-      setActiveSection(sections[nextIndex]);
-    } else if (direction === "RIGHT") {
-      const prevIndex = (currentIndex - 1 + sections.length) % sections.length;
-      setActiveSection(sections[prevIndex]);
-    }
-  };
-
-  const handleTap = (event) => {
-    const touchX = event.touches[0].clientX;
-    const screenWidth = window.innerWidth;
-    const tapThreshold = screenWidth * 0.1; // Define the tap area (20% of screen width)
-
-    if (touchX < tapThreshold) {
-      handleSwipe("RIGHT");
-    } else if (touchX > screenWidth - tapThreshold) {
-      handleSwipe("LEFT");
-    }
-  };
-
-  const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => handleSwipe("LEFT"),
-    onSwipedRight: () => handleSwipe("RIGHT"),
-  });
-
-  useEffect(() => {
-    window.addEventListener("wheel", handleScroll);
-    window.addEventListener("touchstart", handleTap);
-
-    return () => {
-      window.removeEventListener("wheel", handleScroll);
-      window.removeEventListener("touchstart", handleTap);
-    };
-  }, [activeSection]);
-
   return (
     <section
       id="data"
-      className="md:w-2/3 flex md:flex-col h-screen "
-      {...swipeHandlers}
+      className="w-full flex flex-col h-full min-h-[calc(100dvh-5rem)] md:min-h-0"
     >
-      <div className="hidden md:flex flex-col md:flex-row justify-around font-space md:h-1/6">
-        {sections.map((section) => (
-          <div
-            key={section}
-            className={`mt-3 w-full p-0 h-[120px] text-center hover:cursor-pointer invisible md:visible ${
-              activeSection !== section
-                ? "flex items-center justify-center hover:opacity-50 hover:shadow-[5px_5px_5px_rgb(2,110,2)] rounded-full duration-[750ms]"
-                : "rounded-full shadow-[5px_5px_5px_rgb(2,110,2)] bg-white bg-opacity-10"
-            }`}
-            onClick={() => {
-              if (section === "Experiences") setShowCompany("");
-              setActiveSection(section);
-            }}
-          >
-            {activeSection === section && <UfoContainer />}
-            <h1>{section}</h1>
-          </div>
-        ))}
+      {/* Desktop Navigation Pill Bar */}
+      <div className="hidden md:flex items-center justify-center py-4 px-6 w-full">
+        <div className="glass-pill p-1.5 rounded-full flex items-center gap-1.5 border border-white/10 shadow-lg">
+          {sections.map((sec) => {
+            const isActive = activeSection === sec.id;
+            return (
+              <button
+                key={sec.id}
+                onClick={() => {
+                  if (sec.id === "Experiences" && !showCompany) {
+                    setShowCompany("petro-cloud");
+                  }
+                  setActiveSection(sec.id);
+                }}
+                className={`relative px-4 py-2 rounded-full font-space text-xs md:text-sm font-semibold tracking-wider transition-all duration-300 flex items-center gap-2 select-none ${
+                  isActive
+                    ? "bg-gradient-to-r from-emerald-600 to-emerald-500 text-slate-950 shadow-neon-green"
+                    : "text-slate-300 hover:text-white hover:bg-white/10"
+                }`}
+              >
+                {isActive && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-slate-950 animate-pulse"></span>
+                )}
+                <span>{sec.label}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
-      <div className="h-full py-[5vh] md:pt-0 w-full flex px-[5vw] md:pl-0 md:h-5/6">
-        {activeSection === "Home" && profileDesktop === "True" && <Profile />}
-        {activeSection === "Home" && profileDesktop === "False" && <Contact />}
+
+      {/* Main Content Viewport */}
+      <div className="flex-1 w-full p-4 md:p-6 flex flex-col justify-start items-center overflow-hidden">
         {activeSection === "About" && <About />}
         {activeSection === "Experiences" && (
           <Experience
@@ -102,9 +63,9 @@ const DataSection = ({
             showCompany={showCompany}
           />
         )}
-        {activeSection === "Contact" && <Contact />}
         {activeSection === "Skills" && <Skill />}
         {activeSection === "Projects" && <Project showProject={showProject} />}
+        {activeSection === "Contact" && <Contact />}
       </div>
     </section>
   );
