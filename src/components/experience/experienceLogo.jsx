@@ -1,145 +1,106 @@
-import React, { useState } from "react";
-import Generation from "../../assets/Experience/GenerationThailand.jpg";
-import KBTG from "../../assets/Experience/kbtgKampus.png";
-import SVI from "../../assets/Experience/SVI.png";
+import { useState } from "react";
+import { sapProjects } from "../portfolioData.js";
 
 const Experience = ({ showCompany, setShowCompany }) => {
+  const [mobileExpanded, setMobileExpanded] = useState(showCompany || "petro-cloud");
+
+  // Select initial project if empty
+  const activeId = showCompany || "petro-cloud";
+
   return (
-    <div className="md:py-10 md:pr-10 md:pb-0 md:pt-5 w-full flex flex-col justify-center relative animation-fade-in">
-      <button
-        className={`absolute top-10 left-10 hidden md:${
-          showCompany === "" ? "hidden" : "flex"
-        }`}
-        onClick={() => setShowCompany("")}
-      >
-        &lt;Motto
-      </button>
-      <div className="hidden md:flex justify-around">
-        <div
-          className={`w-1/3 flex items-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
-            showCompany === "Generation"
-              ? "rounded-xl bg-white bg-opacity-10 shadow-[5px_5px_5px_rgb(2,110,2)]"
-              : ""
-          }`}
-          onClick={() => setShowCompany("Generation")}
-        >
-          <img
-            src={Generation}
-            alt="Generation"
-            className="w-2/3 rounded-full "
-          />
-          <h2 className="pt-5 text-center">Generation Thailand x GenKX</h2>
+    <div className="w-full h-full flex flex-col animation-fade-in cyber-scrollbar overflow-y-auto pr-1">
+      {/* Header bar */}
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-6 bg-emerald-400 rounded-full"></div>
+          <h3 className="font-space text-lg md:text-xl font-bold text-white tracking-wide">
+            Enterprise Client Projects
+          </h3>
         </div>
-        <div
-          className={`w-1/3 flex items-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
-            showCompany === "KBTG"
-              ? "rounded-xl bg-white bg-opacity-10 shadow-[5px_5px_5px_rgb(2,110,2)]"
-              : ""
-          }`}
-          onClick={() => setShowCompany("KBTG")}
-        >
-          <img src={KBTG} alt="Generation" className={`w-2/3`} />
-          <h2 className="pt-5 text-center">KBTG Kampus</h2>
-        </div>
-        <div
-          className={`w-1/3 flex items-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
-            showCompany === "SVI"
-              ? "rounded-xl bg-white bg-opacity-10 shadow-[5px_5px_5px_rgb(2,110,2)]"
-              : ""
-          }`}
-          onClick={() => setShowCompany("SVI")}
-        >
-          <img src={SVI} alt="Generation" className="w-2/3 rounded-full" />
-          <h2 className="pt-5 text-center">SVI Public Company Limited</h2>
-        </div>
+        <span className="text-xs font-space px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+          {sapProjects.length} Projects / Milestones
+        </span>
       </div>
-      <div className="flex flex-col justify-center min-h-[calc(100vh/2)] md:hidden">
-        <div className="flex p-2">
-          <div
-            className={`border-r-2 pr-2 w-1/3 flex items-center justify-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
-              showCompany === "Generation"
-                ? "rounded-xl bg-white bg-opacity-10 border-x-2"
-                : showCompany === "KBTG" && "border-none"
-            }`}
-            onClick={() =>
-              showCompany !== "Generation"
-                ? setShowCompany("Generation")
-                : setShowCompany("")
-            }
-          >
-            <img
-              src={Generation}
-              alt="Generation"
-              className="w-2/3 rounded-full"
-            />
-            <h2 className="pt-5 text-center">Generation TH</h2>
-            {/* <h2 className="pt-2 text-center">
-              Junior Software Developer Bootcamp
-            </h2> */}
-          </div>
-          <div
-            className={`px-1 w-1/3 flex items-center justify-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer mx-2 ${
-              showCompany === "KBTG"
-                ? "rounded-xl bg-white bg-opacity-10 border-x-2"
-                : ""
-            }`}
-            onClick={() =>
-              showCompany !== "KBTG"
-                ? setShowCompany("KBTG")
-                : setShowCompany("")
-            }
-          >
-            <img src={KBTG} alt="Generation" className={`w-2/3`} />
-            <h2 className="pt-5 text-center">KBTG Kampus</h2>
-            {/* <h2 className="pt-2 text-center">
-              Infrastructure Engineer Bootcamp
-            </h2> */}
-          </div>
-          <div
-            className={`border-l-2 pl-2 w-1/3 flex items-center flex-col hover:opacity-50 duration-100 ease-in hover:cursor-pointer ${
-              showCompany === "SVI"
-                ? "rounded-xl bg-white bg-opacity-10 border-x-2"
-                : showCompany === "KBTG" && "border-none"
-            }`}
-            onClick={() =>
-              showCompany !== "SVI" ? setShowCompany("SVI") : setShowCompany("")
-            }
-          >
-            <img src={SVI} alt="Generation" className="w-2/3 rounded-full" />
-            <h2 className="pt-5 text-center">SVI</h2>
-          </div>
-        </div>
-        {showCompany === "Generation" && (
-          <div className="py-4 px-2 flex flex-col animation-fade-in  rounded-xl bg-white bg-opacity-10">
-            <p className="pb-5 text-center">Apr 2024 – Jul 2024</p>
-            <p className="text-center pb-2">
-              Junior Software Developer Bootcamp
-            </p>
-            <p>• Full Stack with MERN Stack</p>
-            <p>• Software Development Cycle</p>
-            <p>• Hands-on Learning from Industry experts</p>
-          </div>
-        )}
-        {showCompany === "KBTG" && (
-          <div className="py-4 px-2 flex flex-col animation-fade-in rounded-xl bg-white bg-opacity-10">
-            <p className="pb-5 text-center">Sep 2023 – Dec 2023</p>
-            <p className="text-center pb-2">Infrastructure Engineer Bootcamp</p>
-            <p>• DevOps Practices</p>
-            <p>• Cloud Technology</p>
-            <p>• Observability (Monitoring, Logging and Tracing)</p>
-          </div>
-        )}
-        {showCompany === "SVI" && (
-          <div className="py-4 px-2 flex flex-col animation-fade-in rounded-xl bg-white bg-opacity-10">
-            <p className="pb-5 text-center">Oct 2021 – Aug 2022</p>
-            <p className="text-center pb-2">
-              Graduate Engineer – Program Management
-            </p>
-            <p>• Project Improvment & Management</p>
-            <p>• SMT-IMT Engineering</p>
-            <p>• Cross Functional Team Management</p>
-          </div>
-        )}
+
+      {/* Project Cards List */}
+      <div className="space-y-3">
+        {sapProjects.map((item) => {
+          const isSelected = activeId === item.id;
+          return (
+            <div
+              key={item.id}
+              onClick={() => {
+                setShowCompany(item.id);
+                setMobileExpanded(mobileExpanded === item.id ? "" : item.id);
+              }}
+              className={`p-4 rounded-xl cursor-pointer transition-all duration-200 border ${
+                isSelected
+                  ? "bg-slate-900/90 border-emerald-500/60 shadow-[0_0_15px_rgba(0,240,118,0.25)]"
+                  : "bg-slate-950/50 hover:bg-slate-900/60 border-white/10 hover:border-emerald-500/30"
+              }`}
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                <div>
+                  <span className="text-[11px] font-space text-emerald-400 tracking-wider uppercase font-semibold">
+                    {item.industry}
+                  </span>
+                  <h4 className="text-sm md:text-base font-bold text-white mt-0.5">
+                    {item.project}
+                  </h4>
+                </div>
+                <div className="flex items-center gap-2 mt-1 sm:mt-0">
+                  <span className="text-[10px] font-space px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-300">
+                    {item.badge}
+                  </span>
+                  <span
+                    className={`text-xs font-space transition-transform duration-200 ${
+                      isSelected ? "text-emerald-400 rotate-90" : "text-slate-500"
+                    }`}
+                  >
+                    ▶
+                  </span>
+                </div>
+              </div>
+
+              <p className="text-xs text-slate-300 mt-2 line-clamp-2">
+                {item.summary}
+              </p>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-1.5 mt-3">
+                {item.tags.slice(0, 5).map((tag, tIdx) => (
+                  <span
+                    key={tIdx}
+                    className="text-[10px] px-2 py-0.5 rounded-md bg-emerald-950/40 border border-emerald-500/20 text-emerald-300 font-space"
+                  >
+                    {tag}
+                  </span>
+                ))}
+                {item.tags.length > 5 && (
+                  <span className="text-[10px] px-1.5 py-0.5 rounded text-slate-400">
+                    +{item.tags.length - 5}
+                  </span>
+                )}
+              </div>
+
+              {/* Mobile Expansion (Shown directly under card on small viewports) */}
+              {mobileExpanded === item.id && (
+                <div className="mt-4 pt-3 border-t border-white/10 md:hidden animation-fade-in text-xs text-slate-300 space-y-2">
+                  <p className="font-semibold text-emerald-400 font-space text-[11px]">
+                    KEY RESPONSIBILITIES:
+                  </p>
+                  <ul className="space-y-1.5 pl-2 list-disc list-inside">
+                    {item.responsibilities.map((resp, rIdx) => (
+                      <li key={rIdx} className="text-slate-300 leading-relaxed">
+                        {resp}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
